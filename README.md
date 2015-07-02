@@ -1,5 +1,3 @@
 # scalakoans
 
-Exercices to learn Scala...
-
-[http://scalakoans.webfactional.com](http://scalakoans.webfactional.com)
+Learn Scala with the Koans: [http://scalakoans.webfactional.com](http://scalakoans.webfactional.com)
