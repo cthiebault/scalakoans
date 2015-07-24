@@ -53,8 +53,8 @@ class AboutMaps extends KoanSuite {
 
   koan("Map keys may be of mixed type") {
     val myMap = Map("Ann Arbor" -> "MI", 49931 -> "MI")
-//    myMap("Ann Arbor") should be(__)
-//    myMap(49931) should be(__)
+    myMap("Ann Arbor") should be("MI")
+    myMap(49931) should be("MI")
   }
 
   koan("Mixed type values can be added to a map ") {
@@ -62,22 +62,22 @@ class AboutMaps extends KoanSuite {
     myMap("Ann Arbor") = (48103, 48104, 48108)
     myMap("Houghton") = 49931
 
-//    myMap("Houghton") should be(__)
-//    myMap("Ann Arbor") should be((__, __, __))
+    myMap("Houghton") should be(49931)
+    myMap("Ann Arbor") should be((48103, 48104, 48108))
     // what happens if you change the Any to Int
   }
 
 
   koan("Maps may be accessed") {
     val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")
-//    myMap("MI") should be(__)
-//    myMap("IA") should be(__)
+    myMap("MI") should be("Michigan")
+    myMap("IA") should be("Iowa")
   }
 
   koan("Map elements can be removed easily") {
     val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")
     val aNewMap = myMap - "MI"
-//    aNewMap.contains("MI") should be(__)
+    aNewMap.contains("MI") should be(false)
   }
 
   koan("Accessing a map by key results in an exception if key is not found") {
@@ -85,10 +85,9 @@ class AboutMaps extends KoanSuite {
     val myMap = Map("OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")
 
     // Cheat Code (because this is hard to illustrate): uncomment the intercept code to make this pass 
-    //intercept[NoSuchElementException] {
-
-//      myMap("MI") should be(__)
-    //}
+    // intercept[NoSuchElementException] {
+      // myMap("MI") should be(false)
+    // }
   }
 
   koan("Map elements can be removed in multiple") {
@@ -105,9 +104,9 @@ class AboutMaps extends KoanSuite {
     val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")
     val aNewMap = myMap - ("MI", "WI") // Notice: single '-' operator for tuples
 
-//    aNewMap.contains("MI") should be(__)
-//    aNewMap.contains("OH") should be(__)
-//    aNewMap.size should be(__)
+    aNewMap.contains("MI") should be(false)
+    aNewMap.contains("OH") should be(true)
+    aNewMap.size should be(2)
   }
 
   koan("Attempted removal of nonexistent elements from a map is handled gracefully") {

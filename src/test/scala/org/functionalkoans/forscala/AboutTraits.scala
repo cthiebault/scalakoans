@@ -22,7 +22,7 @@ class AboutTraits extends KoanSuite {
 
     val evt = Event("Moose Stampede")
     val myListener = new MyListener
-    myListener.listen(evt) should be (__)
+    myListener.listen(evt) should be ("An unfortunate moose stampede occurred")
   }
 
   koan("A class can only \'extend\' from one class or trait, any subsequent extension should use the keyword \'with\'") {
@@ -46,7 +46,7 @@ class AboutTraits extends KoanSuite {
 
     val evt = Event("Woodchuck Stampede")
     val myListener = new MyListener
-    myListener.listen(evt) should be (__)
+    myListener.listen(evt) should be ("An unfortunate woodchuck stampede occurred")
   }
 
   koan("Traits are polymorphic. Any type can be referred to by another type if related by extension") {
